@@ -79,18 +79,17 @@ This Talend job reads data from one or more CSV files and dynamically determines
 - **tDBClose:** Closes the database connection gracefully.
 - **tPostJob:** Marks job completion and cleanup.
 
-
-tPreJob
-└─> tJava (initialize context variables)
-└─> tDBConnection (open DB connection)
-└─> tDBInput (load lookup table data)
-└─> tFileInputDelimited (read CSV files)
-└─> tJavaRow (custom row-level logic)
-└─> tMap (transform and enrich data)
-└─> tDBOutput (load data into context-defined target table)
-└─> tDBRow (optional custom SQL)
-└─> tLogCatcher (error logging)
-└─> tStatCatcher (capture job statistics)
-└─> tDBOutput (write audit records)
-└─> tDBClose (close DB connection)
-tPostJob
+flowchart TD
+A[tPreJob] --> B[tJava: Initialize Context Variables]
+B --> C[tDBConnection: Open DB Connection]
+C --> D[tDBInput: Load Lookup Table Data]
+D --> E[tFileInputDelimited: Read CSV Files]
+E --> F[tJavaRow: Custom Row Logic]
+F --> G[tMap: Transform and Enrich Data]
+G --> H[tDBOutput: Write to Context-driven Target Table]
+H --> I[tDBRow: Optional Custom SQL]
+I --> J[tLogCatcher: Error Logging]
+J --> K[tStatCatcher: Metrics Collection]
+K --> L[tDBOutput: Write Audit Records]
+L --> M[tDBClose: Close DB Connection]
+M --> N[tPostJob]
