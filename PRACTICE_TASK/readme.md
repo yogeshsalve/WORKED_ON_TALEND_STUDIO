@@ -79,17 +79,19 @@ This Talend job reads data from one or more CSV files and dynamically determines
 - **tDBClose:** Closes the database connection gracefully.
 - **tPostJob:** Marks job completion and cleanup.
 
-tPreJob
-   |----> tJava (initialize context vars: target table name, file path, etc.)
-   |----> tDBConnection (connect using context vars)
-   |----> tDBInput (load lookup data)
-   |----> tFileInputDelimited (read CSV files)
-          |----> tJavaRow (custom row logic)
-          |----> tMap (transform and lookup)
-          |----> tDBOutput (write to context-driven target table)
-          |----> tDBRow (if custom SQL needed)
-          |----> tLogCatcher (error logging)
-          |----> tStatCatcher (metrics collection)
-   |----> tDBOutput (write job audit metrics to audit table)
-   |----> tDBClose
+## Job Component Flow (Step-by-step)
+
+tPreJob  
+&nbsp;&nbsp;&nbsp;&nbsp;→ tJava (initialize context vars: target table name, file path, etc.)  
+&nbsp;&nbsp;&nbsp;&nbsp;→ tDBConnection (connect using context vars)  
+&nbsp;&nbsp;&nbsp;&nbsp;→ tDBInput (load lookup data)  
+&nbsp;&nbsp;&nbsp;&nbsp;→ tFileInputDelimited (read CSV files)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tJavaRow (custom row logic)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tMap (transform and lookup)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tDBOutput (write to context-driven target table)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tDBRow (optional custom SQL)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tLogCatcher (error logging)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tStatCatcher (metrics collection)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ tDBOutput (write job audit metrics to audit table)  
+&nbsp;&nbsp;&nbsp;&nbsp;→ tDBClose  
 tPostJob
