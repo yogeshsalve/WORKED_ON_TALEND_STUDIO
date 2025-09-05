@@ -1,0 +1,4 @@
+OrderID,Product,Quantity,Price,OrderDate
+1010,Keyboard,3,45.50,2025-09-04
+1011,Mouse,2,20.99,2025-09-04
+1012,Monitor,5,199.99,2025-09-04
