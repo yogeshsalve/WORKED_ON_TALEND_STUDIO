@@ -3,5 +3,6 @@ Password:=RainDrops#02061984
 Server:=localhost
 Port:=1433
 Database:=talend
+Schema:=dbo
 Additional_parameter:=noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1
 
