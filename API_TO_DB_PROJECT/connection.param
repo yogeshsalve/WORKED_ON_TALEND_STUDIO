@@ -1,0 +1,8 @@
+Login:=sa
+Password:=RainDrops#02061984
+Server:=localhost
+Port:=1433
+Database:=talend
+Schema:=dbo
+Additional_parameter:=encrypt=true;trustServerCertificate=true;
+
