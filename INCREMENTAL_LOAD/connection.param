@@ -7,3 +7,4 @@ Schema:=dbo
 Additional_parameter:=encrypt=true;trustServerCertificate=true;
 
 
+
