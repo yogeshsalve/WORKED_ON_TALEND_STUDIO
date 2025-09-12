@@ -80,7 +80,7 @@ CREATE TABLE DateDim (
 ```
 
 ### Fact Table
-
+```sql
 CREATE TABLE SalesFact (
     SalesFactKey BIGINT IDENTITY(1,1) PRIMARY KEY,
     OrderID VARCHAR(50),
@@ -93,3 +93,4 @@ CREATE TABLE SalesFact (
     FOREIGN KEY (ProductKey) REFERENCES ProductDim(ProductKey),
     FOREIGN KEY (DateKey) REFERENCES DateDim(DateKey)
 );
+```
