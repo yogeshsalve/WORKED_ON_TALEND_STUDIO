@@ -42,4 +42,54 @@ Data originates from **e-commerce transactions API (orders)** and must be transf
 
 ---
 
-## 🗂 Example Data
+
+## 🏗️ Target Schema Design
+
+### Dimension Tables
+```sql
+CREATE TABLE CustomerDim (
+    CustomerKey INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID VARCHAR(50),
+    CustomerName VARCHAR(100),
+    City VARCHAR(100),
+    Country VARCHAR(100),
+    EffectiveDate DATETIME,
+    ExpiryDate DATETIME,
+    IsActive BIT
+);
+
+CREATE TABLE ProductDim (
+    ProductKey INT IDENTITY(1,1) PRIMARY KEY,
+    ProductID VARCHAR(50),
+    ProductName VARCHAR(100),
+    Category VARCHAR(100),
+    EffectiveDate DATETIME,
+    ExpiryDate DATETIME,
+    IsActive BIT
+);
+
+CREATE TABLE DateDim (
+    DateKey INT PRIMARY KEY,
+    FullDate DATE,
+    Year INT,
+    Month INT,
+    Day INT,
+    Quarter INT
+);
+
+```
+
+### Fact Table
+
+CREATE TABLE SalesFact (
+    SalesFactKey BIGINT IDENTITY(1,1) PRIMARY KEY,
+    OrderID VARCHAR(50),
+    CustomerKey INT,
+    ProductKey INT,
+    DateKey INT,
+    Quantity INT,
+    Amount DECIMAL(10,2),
+    FOREIGN KEY (CustomerKey) REFERENCES CustomerDim(CustomerKey),
+    FOREIGN KEY (ProductKey) REFERENCES ProductDim(ProductKey),
+    FOREIGN KEY (DateKey) REFERENCES DateDim(DateKey)
+);
