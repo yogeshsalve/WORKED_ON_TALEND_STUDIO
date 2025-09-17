@@ -9,6 +9,9 @@ Welcome to my Talend Studio project repository. This repository contains multipl
 - **Project 02 - UPLOAD CSV TO DATABASE**: Upload a csv file into database.
 - **Project 03 - UPLOAD MULTIPLE CSV FILES AT ONCE IN DB**: Upload multiple csv files into database at once.
 - **Project 04 - API TO DB**: Read api data and stored into Database.
+- **Project 05 - INCREMENTAL LOAD**
+- **Project 06 - Load a Data Warehouse Star Schema**
+- **Project 07 - Modular Job Design using tRunJob**
 - **[Other project names and brief descriptions here]**
 
 Feel free to explore any project folder for detailed information, Talend job files, and screenshots.
