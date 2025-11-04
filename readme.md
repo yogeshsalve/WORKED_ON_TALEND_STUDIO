@@ -12,7 +12,7 @@ Welcome to my Talend Studio project repository. This repository contains multipl
 - **Project 05 - Incremental Load**
 - **Project 06 - Load a Data Warehouse Star Schema**
 - **Project 07 - Modular Job Design using tRunJob**
-- **[Other project names and brief descriptions here]**
+<!-- - **[Other project names and brief descriptions here]** -->
 
 Feel free to explore any project folder for detailed information, Talend job files, and screenshots.
 
