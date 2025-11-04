@@ -6,7 +6,7 @@ Welcome to my Talend Studio project repository. This repository contains multipl
 
 - **Project 01 - Data Generator Job**: Generates sample data using tRowGenerator and logs output with tLogRow.
 
-- **Project 02 - UPLOAD CSV TO DATABASE**: Upload a csv file into database.
+- **Project 02 - Upload CSV to Database**: Upload a csv file into database.
 - **Project 03 - UPLOAD MULTIPLE CSV FILES AT ONCE IN DB**: Upload multiple csv files into database at once.
 - **Project 04 - API TO DB**: Read api data and stored into Database.
 - **Project 05 - INCREMENTAL LOAD**
