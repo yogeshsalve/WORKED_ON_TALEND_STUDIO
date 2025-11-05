@@ -12,7 +12,7 @@ Welcome to my Talend Studio project repository. This repository contains multipl
 - **Project 05 - Incremental Load**
 - **Project 06 - Load a Data Warehouse Star Schema**
 - **Project 07 - Modular Job Design using tRunJob**
-- **Project 08 - talend_sales_etl_pipeline**
+- **Project 08 - Sales Data Integration Pipeline**
 <!-- - **[Other project names and brief descriptions here]** -->
 
 Feel free to explore any project folder for detailed information, Talend job files, and screenshots.
